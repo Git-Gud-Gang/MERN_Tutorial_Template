@@ -2,6 +2,8 @@ import express from "express"
 import cors from "cors"
 import restaurants from "./api/restaurants.routes.js"
 
+//nodemon server in backend directory to start server
+
 const app = express()
 
 app.use(cors())

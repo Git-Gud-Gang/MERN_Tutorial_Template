@@ -5,7 +5,7 @@ export default class RestaurantsController {
     const restaurantsPerPage = req.query.restaurantsPerPage ? parseInt(req.query.restaurantsPerPage, 10) : 20
     const page = req.query.page ? parseInt(req.query.page, 10) : 0
 
-    let filters = {}
+    let filters = {}  //empty object
     if (req.query.cuisine) {
       filters.cuisine = req.query.cuisine
     } else if (req.query.zipcode) {
@@ -29,6 +29,7 @@ export default class RestaurantsController {
     }
     res.json(response)
   }
+
   static async apiGetRestaurantById(req, res, next) {
     try {
       let id = req.params.id || {}
